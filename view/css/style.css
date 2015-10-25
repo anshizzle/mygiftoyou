@@ -32,17 +32,31 @@
 .historyTable {
   width: 300px;
   padding: 10px;
-  background: white;
   color: black;
   top: 15%;
   right: 5%;
   position: fixed;
+
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: black;
+
+}
+
+.tableCell {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #989898;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .buddy {
   display: none;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   color: #fff;
   padding: 2px;
@@ -69,6 +83,9 @@
   cursor: w-resize;
 }
 .avatar {
+  user-drag: none; 
+-moz-user-select: none;
+-webkit-user-drag: none;
   background: #222;
   width: 340px;
   height: 340px;
