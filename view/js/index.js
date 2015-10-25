@@ -27,12 +27,29 @@ $(document).ready(function(){
     //     }
     // }
 
-    var gifHistory = []
+var gifHistory = []
 
-    jQuery.getJSON("js/test.json", function(file) {
-      console.log(file);
-    });
+var jsonFile;
+
+function getURL() {
     
+    // $.getJSON("js/test.json", function(file) {
+    //   // console.log(file);
+    //   console.log("got here");
+    //   returnFile = "hi";
+    // });
+
+    jsonFile = $.getJSON("js/test.json");
+}
+
+getURL();
+jsonFile.done( function() {
+  jsonFile = jsonFile.responseJSON;
+  console.log(jsonFile);  
+});
+
+    
+
     document.getElementById("next").src = "http://thefw.com/files/2013/05/0hgyoKm.gif";
 
     //swiping functionality:
