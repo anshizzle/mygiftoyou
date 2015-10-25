@@ -5,9 +5,9 @@ $(document).ready(function(){
       el: '#vueApp',
       data: {
         todos: [
-          { text: 'Learn JavaScript' },
-          { text: 'Learn Vue.js' },
-          { text: 'Build Something Awesome' }
+          { text: 'GIF #1' },
+          { text: 'GIF #2' },
+          { text: 'GIF #3' }
         ]
       }
     })
