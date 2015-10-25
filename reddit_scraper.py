@@ -62,24 +62,19 @@ class RedditScraper:
 
 def main():
 	r = RedditScraper()
-	submissions = r.get_submissions_top_all('gifs', 1)
+	subreddit = 'gifs'
+	submissions = r.get_submissions_top_all(subreddit, 5)
+
+	f = open('subreddits/' + subreddit, 'w')
 
 	for submission in submissions:
 		if r.is_gif(submission.url):
-			# write to db
-			print submission.url
-			print submission
-
-			for author_sub in r.get_author_submissions(submission, 1):
-				if r.is_gif(author_sub.url):
-					print author_sub
-
+			f.write(submission.url + '\n')
 		elif r.is_gfycat(submission.url):
-			# write to db
 			submission.url = submission.url.replace('gfycat.com', 'giant.gfycat.com') + '.gif'
-			print submission.url
-			print submission
+			f.write(submission.url + '\n')
 
+	f.close()
 
 if __name__ == "__main__":
 	main()
