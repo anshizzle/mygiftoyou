@@ -36,12 +36,11 @@ class RedditScraper:
 		result = []
 		for gif_submission in author_submitted:
 			if temp_count >= count:
-				return result
+				break
 			result.append(gif_submission)
-			count+=1
+			temp_count += 1
 		return result
 
-		#return [gif_submission for gif_submission in author_submitted[0:count] if is_gif(gif_submission)]
 
 	'''
 		GIF URL CHECKING
