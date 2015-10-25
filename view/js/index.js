@@ -12,6 +12,9 @@ $(document).ready(function(){
       }
     })
 
+    var gifHistory = []
+
+    document.getElementById("next").src = "http://thefw.com/files/2013/05/0hgyoKm.gif";
 
     //swiping functionality:
     $(".buddy").on("swiperight",function(){

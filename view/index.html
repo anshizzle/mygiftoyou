@@ -15,20 +15,34 @@
   <div id="backgroundColor">
 
     <div id="vueApp" class="historyTable">
-        <ul>
-          <li v-for="todo in todos">
-            {{ todo.text }}
-          </li>
-        </ul>
+        <div>
+          <div class="tableCell" v-for="todo in todos">
+            <div id="cellGifPreview">
+            </div>
+            <div id="cellGifLink">
+              {{ todo.text }}
+            </div>
+          </div>
+        </div>
     </div>
 
     <img id="logo" src="images/logo.png">
 
     <div id="container">
 
+
+      <!-- test gif container -->
       <div class="buddy" style="display: block;">
 
-        <!-- gif implementation -->
+          <img id="next" class="avatar" style="display: block;">
+
+      </div>
+
+
+      <!-- default gif container-->
+      <div class="buddy" style="display: block;">
+
+        <!-- new gif implementation -->
         <div class="avatar"  style="display: block; background-image: url(http://images5.fanpop.com/image/photos/30600000/Banana-gif-bananas-30667445-140-140.gif)"></div>
 
         <!-- original source code: static image implementation -->
