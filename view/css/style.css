@@ -29,6 +29,13 @@
   user-select: none;
 }
 
+.historyTable {
+  width: 300px;
+  height: 600px;
+  background: white;
+  color: black;
+}
+
 .buddy {
   display: none;
   background: #fff;

@@ -1,5 +1,19 @@
 $(document).ready(function(){
 
+    //history of gif table:
+    new Vue({
+      el: '#vueApp',
+      data: {
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue.js' },
+          { text: 'Build Something Awesome' }
+        ]
+      }
+    })
+
+
+    //swiping functionality:
     $(".buddy").on("swiperight",function(){
       $(this).addClass('rotate-left').delay(700).fadeOut(1);
       $('.buddy').find('.status').remove();

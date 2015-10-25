@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
     <script src="js/index.js"></script>
 </head>
 <body>
   <div id="backgroundColor">
 
     <img id="logo" src="images/logo.png">
-
-    <div id="buttonContainer">
 
       <div id="container">
 
@@ -48,6 +47,12 @@
         </div>
       </div>
     </div>
-  </div>
+    <div id="vueApp" class="historyTable">
+      <ul>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ul>
+    </div>
 </body>
 </html>
