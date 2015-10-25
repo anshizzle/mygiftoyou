@@ -3,6 +3,17 @@
   height: 100vh;
 }
 
+#logo {
+   display: block;
+   width:300px; /*width of your image*/
+   height:150px; /*height of your image*/
+/*   margin:0;  If you want no margin */
+   /*padding:10px; if your want to padding */
+   top: 15%;
+   left: 5%;
+   position: absolute;
+}
+
 #container {
   width: 500px;
   margin: auto !important;
