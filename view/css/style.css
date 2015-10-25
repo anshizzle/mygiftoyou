@@ -9,8 +9,8 @@
    height:150px; /*height of your image*/
 /*   margin:0;  If you want no margin */
    /*padding:10px; if your want to padding */
-   top: 50px;
-   left: 50px;
+   top: 15%;
+   left: 5%;
    position: absolute;
 }
 
