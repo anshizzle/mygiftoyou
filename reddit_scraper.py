@@ -1,6 +1,7 @@
 #!usr/bin/env/python
 
 import praw
+import json
 
 class RedditScraper:
 	ACCEPTABLE_FILE_EXTENSIONS = ['gif', 'gifv']
@@ -62,18 +63,27 @@ class RedditScraper:
 
 def main():
 	r = RedditScraper()
-	subreddit = 'gifs'
-	submissions = r.get_submissions_top_all(subreddit, 5)
+	subreddits = ['gifs', 'holdmybeer', 'naturegifs', 'reactiongifs', 'startledcats',
+					'dashcamgifs', 'educationalgifs', 'aviationgifs', 'mechanical_gifs',
+					'spacegifs', 'oceangifs', 'physicsgifs', 'wellthatsucks', 'nevertellmetheodds',
+					'nonononoaww', 'instant_regret']
 
-	f = open('subreddits/' + subreddit, 'w')
+	gif_urls = {}
+	for subreddit in subreddits:
+		subreddit_urls = []
+		submissions = r.get_submissions_top_all(subreddit, 25)
 
-	for submission in submissions:
-		if r.is_gif(submission.url):
-			f.write(submission.url + '\n')
-		elif r.is_gfycat(submission.url):
-			submission.url = submission.url.replace('gfycat.com', 'giant.gfycat.com') + '.gif'
-			f.write(submission.url + '\n')
+		for submission in submissions:
+			if r.is_gif(submission.url):
+				subreddit_urls.append(submission.url)
+			elif r.is_gfycat(submission.url):
+				submission.url = submission.url.replace('gfycat.com', 'giant.gfycat.com') + '.gif'
+				subreddit_urls.append(submission.url)
 
+		gif_urls[subreddit] = subreddit_urls
+
+	f = open('gif_urls.json', 'w')
+	json.dump(gif_urls, f)
 	f.close()
 
 if __name__ == "__main__":
