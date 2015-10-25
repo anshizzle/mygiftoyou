@@ -1,3 +1,7 @@
+#backgroundColor {
+  background: #404040;
+  height: 100vh;
+}
 
 #container {
   width: 500px;
@@ -13,13 +17,14 @@
   -ms-user-select: none;
   user-select: none;
 }
+
 .buddy {
   display: none;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   color: #fff;
-  padding: 20px;
+  padding: 2px;
   width: 360px;
   height: 360px;
   top: 50px;
@@ -27,6 +32,7 @@
   position: absolute;
   cursor: hand;
 }
+
 .rotate-left {
   transform: rotate(30deg) scale(0.8);
   transition: 1s;
