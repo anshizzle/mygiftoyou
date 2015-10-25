@@ -12,8 +12,27 @@ $(document).ready(function(){
       }
     })
 
+    // var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
+
+    // function loadFile() {
+    //     reader.open('get', 'test.rtf', true); 
+    //     reader.onreadystatechange = displayContents;
+    //     reader.send(null);
+    // }
+
+    // function displayContents() {
+    //     if(reader.readyState==4) {
+    //         var el = document.getElementById('main');
+    //         el.innerHTML = reader.responseText;
+    //     }
+    // }
+
     var gifHistory = []
 
+    jQuery.getJSON("js/test.json", function(file) {
+      console.log(file);
+    });
+    
     document.getElementById("next").src = "http://thefw.com/files/2013/05/0hgyoKm.gif";
 
     //swiping functionality:
